@@ -15,7 +15,10 @@ function createNews(data: ICreateNews) {
   }
 }
 
-function getNews(filterParams: FilterFormValues, paginationParams: IPaginationParams) {
+function getNews(
+  filterParams: FilterFormValues,
+  paginationParams: IPaginationParams
+) {
   try {
     let titleFilter = '';
     let descriptionFilter = '';

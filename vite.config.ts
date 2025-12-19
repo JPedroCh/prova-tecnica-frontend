@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/',
   plugins: [react()],
   test: {
-    globals: true,        // describe, it, expect globais
+    globals: true, // describe, it, expect globais
     environment: 'jsdom', // necessário para testes React
     setupFiles: './tests/setupTests.ts', // opcional
   },
@@ -21,5 +21,5 @@ export default defineConfig({
     host: true,
     origin: 'http://0.0.0.0:8080',
   },
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } as any);

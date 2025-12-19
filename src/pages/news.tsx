@@ -16,7 +16,12 @@ import {
   Select,
 } from '@chakra-ui/react';
 import { BiEditAlt } from 'react-icons/bi';
-import { INews, IPaginatedNews, IPagination, IPaginationParams } from '../services/models/news';
+import {
+  INews,
+  IPaginatedNews,
+  IPagination,
+  IPaginationParams,
+} from '../services/models/news';
 import newsService from '../services/news';
 import { AxiosResponse } from 'axios';
 import { toast } from '../components/Toast';
@@ -39,10 +44,11 @@ const News = () => {
   const [newsList, setNewsList] = useState<INews[]>([]);
   const [selectedNews, setSelectedNews] = useState<INews>();
   const [paginationParams, setPaginationParams] = useState<IPagination>();
-  const [selectedPaginationParams, setSelectedPaginationParams] = useState<IPaginationParams>({
-    limit: 5,
-    page: 1
-  });
+  const [selectedPaginationParams, setSelectedPaginationParams] =
+    useState<IPaginationParams>({
+      limit: 5,
+      page: 1,
+    });
   const {
     isOpen: isOpenCreateNewsModal,
     onClose: onCloseCreateNewsModal,
@@ -198,9 +204,9 @@ const News = () => {
       </TableContainer>
       <Flex justifyContent="center" gap="20px" display="flex" marginTop="20px">
         <Flex gap="20px" display="flex" alignItems="center" color="white">
-          Exibir 
+          Exibir
           <Select
-            value={selectedPaginationParams.limit} 
+            value={selectedPaginationParams.limit}
             onChange={(e) =>
               setSelectedPaginationParams({
                 ...selectedPaginationParams,
@@ -209,16 +215,16 @@ const News = () => {
             }
           >
             {limitOptions.map((limitOption) => (
-                <option key={limitOption} value={limitOption}>
-                  {limitOption}
-                </option>
-              ))}
+              <option key={limitOption} value={limitOption}>
+                {limitOption}
+              </option>
+            ))}
           </Select>
         </Flex>
         <Flex gap="20px" display="flex" alignItems="center" color="white">
           Página
-          <Select 
-            value={selectedPaginationParams.page} 
+          <Select
+            value={selectedPaginationParams.page}
             onChange={(e) =>
               setSelectedPaginationParams({
                 ...selectedPaginationParams,
