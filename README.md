@@ -92,6 +92,20 @@ Se você deseja contribuir para este projeto, por favor siga estas etapas:
 4. Push para a branch (`git push origin feature/nova-funcionalidade`)
 5. Abra um Pull Request para a branch `develop`
 
+## Demonstrações
+
+### Fluxo de CEP
+
+Neste vídeo foi apresentada a página de busca de endereço por CEP:
+
+[![Assistir vídeo](https://img.youtube.com/vi/Gp2P-f6o28s/0.jpg)](https://www.youtube.com/watch?v=Gp2P-f6o28s)
+
+### Fluxo de Notícias
+
+Neste vídeo foi apresentada a página de notícias e suas funcionalidades (criar, atualizar, listar e remover):
+
+[![Assistir vídeo](https://img.youtube.com/vi/OoirNWhoM5M/0.jpg)](https://www.youtube.com/watch?v=OoirNWhoM5M)
+
 ## Estrutura de Pastas/Arquivos
 
 ```bash
