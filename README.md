@@ -80,7 +80,7 @@ npm run test
 ```
 
 O resultado esperado é o seguinte:
-![alt text](image.png)
+![alt text](public/teste-resultado.png)
 
 ## Contribuição
 
