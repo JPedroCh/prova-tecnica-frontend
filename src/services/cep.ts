@@ -1,12 +1,11 @@
-import { CEP_API } from "./baseService";
+import { CEP_API } from './baseService';
 
 function getAddresses(cep: string) {
-  
   try {
     return CEP_API({
       method: 'GET',
-      url: `/${cep}/json/`
-    })
+      url: `/${cep}/json/`,
+    });
   } catch (error) {
     console.error('Error: ', error);
     throw error;
@@ -14,5 +13,5 @@ function getAddresses(cep: string) {
 }
 
 export default {
-  getAddresses
-}
+  getAddresses,
+};

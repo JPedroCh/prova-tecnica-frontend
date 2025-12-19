@@ -1,12 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Title = styled.h1`
   color: black;
 `;
 
-export const StyledInput =  styled.input`
+export const StyledInput = styled.input`
   width: 100%;
-  color: #061A40;
+  color: #061a40;
   font-size: 24px;
   font-weight: 400;
   line-height: normal;
@@ -14,7 +14,7 @@ export const StyledInput =  styled.input`
   border: 1px solid black;
   border-radius: 10px;
   padding: 8px;
-  
+
   @media (max-width: 750px) {
     padding: 6px;
     font-size: 18px;
@@ -32,7 +32,7 @@ export const StyledLabel = styled.label`
   }
 `;
 
-export const InvalidMessage  = styled.span`
+export const InvalidMessage = styled.span`
   display: block;
   color: red;
 `;

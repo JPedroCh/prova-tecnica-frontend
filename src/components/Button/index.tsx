@@ -1,4 +1,4 @@
-import { StyledButton } from "./styles";
+import { StyledButton } from './styles';
 
 interface ButtonProps {
   text: string;
@@ -7,12 +7,11 @@ interface ButtonProps {
 }
 
 const Button = ({ text, onClick, type = 'button' }: ButtonProps) => {
-
   return (
     <StyledButton onClick={onClick} type={type}>
       {text}
     </StyledButton>
-  )
-}
+  );
+};
 
 export default Button;

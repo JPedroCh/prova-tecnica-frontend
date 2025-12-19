@@ -1,6 +1,5 @@
-
-import { theme } from "../../styles/theme";
-import styled from "styled-components";
+import { theme } from '../../styles/theme';
+import styled from 'styled-components';
 
 export const Card = styled.div`
   background-color: white;
@@ -18,4 +17,3 @@ export const Card = styled.div`
 export const Title = styled.h1`
   color: black;
 `;
-

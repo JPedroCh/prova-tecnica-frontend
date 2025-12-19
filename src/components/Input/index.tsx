@@ -14,14 +14,14 @@ interface InputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input: React.FC<InputProps> = ({ 
-  label, 
-  value = "", 
-  name, 
-  placeholder = "", 
-  onChange, 
-  type = "text",
-  validation = { isInvalid: false }
+const Input: React.FC<InputProps> = ({
+  label,
+  value = '',
+  name,
+  placeholder = '',
+  onChange,
+  type = 'text',
+  validation = { isInvalid: false },
 }) => {
   return (
     <div>
@@ -30,13 +30,15 @@ const Input: React.FC<InputProps> = ({
         value={value}
         name={name}
         type={type}
-        style={validation.isInvalid ? { border: '1px solid red'} : {}}
+        style={validation.isInvalid ? { border: '1px solid red' } : {}}
         placeholder={placeholder}
         onChange={onChange}
       />
-      {validation.isInvalid && validation.message && <InvalidMessage>{validation.message}</InvalidMessage>}
+      {validation.isInvalid && validation.message && (
+        <InvalidMessage>{validation.message}</InvalidMessage>
+      )}
     </div>
-  )
+  );
 };
 
 export default Input;

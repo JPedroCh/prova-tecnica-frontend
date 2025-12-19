@@ -1,5 +1,5 @@
-import { theme } from "../../styles/theme";
-import styled from "styled-components";
+import { theme } from '../../styles/theme';
+import styled from 'styled-components';
 
 export const Background = styled.div`
   background: ${theme.gradient};
