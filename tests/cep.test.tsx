@@ -3,6 +3,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Cep from '../src/pages/cep';
 import cepService from '../src/services/cep';
 import { describe, expect, it, vi } from 'vitest';
+import { MemoryRouter } from 'react-router-dom';
 
 // Mock do cepService
 vi.mock('../services/cep', () => ({
@@ -31,7 +32,11 @@ describe('Busca de endereços por CEP', () => {
       data: fakeCepData,
     });
 
-    render(<Cep />);
+    render(
+      <MemoryRouter>
+        <Cep />
+      </MemoryRouter>
+    );
 
     const input = screen.getByLabelText(/Número de CEP/i);
     fireEvent.change(input, { target: { value: '01001000' } });
@@ -51,7 +56,11 @@ describe('Busca de endereços por CEP', () => {
       data: { erro: true },
     });
 
-    render(<Cep />);
+    render(
+      <MemoryRouter>
+        <Cep />
+      </MemoryRouter>
+    );
 
     const input = screen.getByLabelText(/Número de CEP/i);
     fireEvent.change(input, { target: { value: '00000000' } });
