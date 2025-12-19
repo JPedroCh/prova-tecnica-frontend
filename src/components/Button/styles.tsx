@@ -1,12 +1,11 @@
-
-import { theme } from "../../styles/theme";
-import styled from "styled-components";
+import { theme } from '../../styles/theme';
+import styled from 'styled-components';
 
 export const StyledButton = styled.button`
   background-color: ${theme.background};
   border: none;
   padding: 12px 0 !important;
-  color: #FFF;
+  color: #fff;
   width: 200px;
   height: min-content;
   border-radius: 15px;
@@ -22,4 +21,4 @@ export const StyledButton = styled.button`
   @media (max-width: 750px) {
     font-size: 16px;
   }
-`
+`;

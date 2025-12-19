@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const InfoContainer = styled.div`
   display: flex;
@@ -11,10 +11,9 @@ export const InfoContainer = styled.div`
 
 export const Title = styled.h3`
   color: black;
-  font-weight: 600; 
+  font-weight: 600;
 `;
 
 export const Info = styled.h3`
   color: black;
 `;
-

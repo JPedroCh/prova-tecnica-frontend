@@ -1,17 +1,15 @@
-
-import axios from "axios";
-import { useState } from "react";
-import Button from "../components/Button";
-import InfoDisplay from "../components/InfoDisplay";
-import Layout from "../components/Layout";
-import Input from "../components/Input";
+import axios from 'axios';
+import { useState } from 'react';
+import Button from '../components/Button';
+import InfoDisplay from '../components/InfoDisplay';
+import Layout from '../components/Layout';
+import Input from '../components/Input';
 import cepService from '../services/cep';
-import FormCard from "../components/FormCard";
-
+import FormCard from '../components/FormCard';
 
 type FormValues = {
   cepNumber: string;
-}
+};
 
 type CepObject = {
   cep: string;
@@ -24,24 +22,23 @@ type CepObject = {
   gia: string;
   ddd: string;
   siafi: string;
-}
+};
 
 const Cep = () => {
-
-  const [searchForm, setSearchForm] = useState<FormValues>({ cepNumber: ""});
-  const [cepData, setCepData] = useState<CepObject  | undefined>(undefined);
+  const [searchForm, setSearchForm] = useState<FormValues>({ cepNumber: '' });
+  const [cepData, setCepData] = useState<CepObject | undefined>(undefined);
   const [cepError, setCepError] = useState<boolean>(false);
 
   const handleSearchForm = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchForm({ ...searchForm, [event.target.name]: event.target.value })
+    setSearchForm({ ...searchForm, [event.target.name]: event.target.value });
   };
 
   const register = async () => {
-    try{
+    try {
       const response = await cepService.getAddresses(searchForm.cepNumber);
 
       if (response.status === 200) {
-        if(response.data.erro === true){
+        if (response.data.erro === true) {
           setCepError(true);
         } else {
           setCepData(response.data);
@@ -53,7 +50,7 @@ const Cep = () => {
         setCepError(true);
       }
     }
-  }
+  };
 
   return (
     <Layout direction="row">
@@ -65,59 +62,32 @@ const Cep = () => {
           value={searchForm.cepNumber}
           onChange={handleSearchForm}
           placeholder="Insira o seu número"
-          />
-        <Button text="Buscar" onClick={register}/>
+        />
+        <Button text="Buscar" onClick={register} />
       </FormCard>
 
-      { typeof cepData !== "undefined" && cepError === false &&
+      {typeof cepData !== 'undefined' && cepError === false && (
         <FormCard title={`Endereço`}>
-          <InfoDisplay
-            title="CEP"
-            info={cepData?.cep || ""}
-          />
-          <InfoDisplay
-            title="Logradouro"
-            info={cepData?.logradouro || ""}
-          />
-          <InfoDisplay
-            title="Complemento"
-            info={cepData?.complemento || ""}
-          />
-          <InfoDisplay
-            title="Bairro"
-            info={cepData?.bairro || ""}
-          />
-          <InfoDisplay
-            title="Localidade"
-            info={cepData?.localidade || ""}
-          />
-          <InfoDisplay
-            title="UF"
-            info={cepData?.uf || ""}
-          />
-          <InfoDisplay
-            title="IBGE"
-            info={cepData?.ibge || ""}
-          />
-          <InfoDisplay
-            title="DDD"
-            info={cepData?.ddd || ""}
-          />
-          <InfoDisplay
-            title="SIAFI"
-            info={cepData?.siafi || ""}
-          />
+          <InfoDisplay title="CEP" info={cepData?.cep || ''} />
+          <InfoDisplay title="Logradouro" info={cepData?.logradouro || ''} />
+          <InfoDisplay title="Complemento" info={cepData?.complemento || ''} />
+          <InfoDisplay title="Bairro" info={cepData?.bairro || ''} />
+          <InfoDisplay title="Localidade" info={cepData?.localidade || ''} />
+          <InfoDisplay title="UF" info={cepData?.uf || ''} />
+          <InfoDisplay title="IBGE" info={cepData?.ibge || ''} />
+          <InfoDisplay title="DDD" info={cepData?.ddd || ''} />
+          <InfoDisplay title="SIAFI" info={cepData?.siafi || ''} />
         </FormCard>
-      }
+      )}
 
-      { cepError &&
+      {cepError && (
         <FormCard title={`Erro!`}>
           <InfoDisplay
             title="Erro"
-            info={"CEP não encontrado! Verifique novamente."}
+            info={'CEP não encontrado! Verifique novamente.'}
           />
         </FormCard>
-      }
+      )}
     </Layout>
   );
 };

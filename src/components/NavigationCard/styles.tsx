@@ -1,5 +1,5 @@
-import { theme } from "../../styles/theme";
-import styled from "styled-components";
+import { theme } from '../../styles/theme';
+import styled from 'styled-components';
 
 export const Card = styled.div`
   background-color: white;
@@ -24,8 +24,7 @@ export const Title = styled.h1`
 `;
 
 export const Image = styled.img`
-  height: 300px; 
+  height: 300px;
   width: 350px;
   padding: 20px;
 `;
-

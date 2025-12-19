@@ -1,5 +1,4 @@
-import { Card, Title, Image } from "./styles";
-
+import { Card, Title, Image } from './styles';
 
 interface NavigationCardProps {
   title: string;
@@ -8,21 +7,19 @@ interface NavigationCardProps {
   onClick: () => void;
 }
 
-const NavigationCard = ({ title, description, image, onClick }: NavigationCardProps ) => {
-
+const NavigationCard = ({
+  title,
+  description,
+  image,
+  onClick,
+}: NavigationCardProps) => {
   return (
     <Card onClick={onClick}>
       <Title>{title}</Title>
-      {
-        description ? 
-        <>{description}</>
-        :<></>
-      }
-      {
-        image && <Image src={image}/>
-      }
+      {description ? <>{description}</> : <></>}
+      {image && <Image src={image} />}
     </Card>
-  )
-}
+  );
+};
 
 export default NavigationCard;
