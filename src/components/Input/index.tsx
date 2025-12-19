@@ -25,8 +25,9 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div>
-      {label && <StyledLabel>{label}</StyledLabel>}
+      {label && <StyledLabel htmlFor={name}>{label}</StyledLabel>}
       <StyledInput
+        id={name}
         value={value}
         name={name}
         type={type}
