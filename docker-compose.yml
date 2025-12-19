@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  frontend:
+    build: .
+    container_name: prova-tecnica-frontend
+    ports:
+      - "4173:4173"   # mapeia porta do container para host
+    command: npx vite preview --port 4173 --host
